@@ -11,6 +11,19 @@ namespace ConsoleAppExWk1
             //            int numInt1 = 1/0;
             //            Console.WriteLine("numInt1 = "+numInt1);
             NumExcercise();
+            RandomNum();
+        }
+
+        private static void RandomNum()
+        {
+            Random randomNum = new Random();
+
+            Console.WriteLine("\nRandom Number Generator\n");
+
+            for (int i = 0; i<20; i++)
+            {
+                Console.WriteLine($"Number {i} is: {randomNum.Next(1,101)}" );
+            }
         }
 
         static double InputFromUser()
@@ -20,7 +33,7 @@ namespace ConsoleAppExWk1
 
             while(parseIndicator == false)
             {
-                Console.Write("Enter a any number : ");
+                Console.Write("Enter a any number with decimals : ");
                 parseIndicator = double.TryParse(Console.ReadLine(), out numDou);
 
                 if ( ! parseIndicator)
@@ -40,10 +53,12 @@ namespace ConsoleAppExWk1
             int numberA = (int)stdDecimal;
 
             Console.WriteLine("stdDecimal = " + stdDecimal);
-            Console.WriteLine("Round up to nearest Integer by Math.Ceiling : " + Math.Ceiling(stdDecimal));
-            Console.WriteLine("Round up to nearest Decimal by Math.Round : " + Math.Round(stdDecimal, 2));
+            Console.WriteLine("Round up to nearest Integer by Math.Ceiling : {0}",Math.Ceiling(stdDecimal));
+            Console.WriteLine("Round up to nearest 2 Decimal by Math.Round : " + Math.Round(stdDecimal, 2));
             Console.WriteLine("Assigned stdDec to Int numberA = " + numberA);
 
+            Console.Write("Hit any key for next example!");
+            Console.ReadKey();
         }
 
         private static void DateTimeExp()
